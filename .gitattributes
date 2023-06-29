@@ -1,2 +1,2 @@
-# Exclude html into the linguist
-*.html linguist-vendored=false
+# Exclude html inside the graph folder
+graph/* linguist-vendored=false
