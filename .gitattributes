@@ -1,3 +1,4 @@
 # Exclude html files
 *.html linguist-vendored
 *.htm linguist-vendored
+*.ipynb linguist-vendored
