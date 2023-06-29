@@ -1,2 +1,0 @@
-# Exclude html inside the graph folder
-graph/* linguist-vendored=false
