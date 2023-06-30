@@ -1,3 +1,5 @@
+import numpy as np
+
 def generate_dollar_volume_weights(close, volume):
     """
     Generate dollar volume weights.

@@ -37,7 +37,7 @@ if __name__ == "__main__":
     project_helper.plot_benchmark_returns(index_weighted_cumulative_returns, etf_weighted_cumulative_returns, 'Smart Beta ETF vs Index')
 
     # compute the tracking error between the ETF and index
-    smart_beta_tracking_error = tracking_error(np.sum(index_weighted_returns, 1), np.sum(etf_weighted_returns, 1))
+    smart_beta_tracking_error = smart_beta.tracking_error(np.sum(index_weighted_returns, 1), np.sum(etf_weighted_returns, 1))
     print('Smart Beta Tracking Error: {}'.format(smart_beta_tracking_error))
     
     # 
