@@ -1,4 +1,5 @@
 import smart_beta
+import portfolio_optimization
 import pandas as pd
 import numpy as np
 
@@ -40,4 +41,16 @@ if __name__ == "__main__":
     smart_beta_tracking_error = smart_beta.tracking_error(np.sum(index_weighted_returns, 1), np.sum(etf_weighted_returns, 1))
     print('Smart Beta Tracking Error: {}'.format(smart_beta_tracking_error))
     
-    # 
+    # compute covariance and view the data
+    covariance_returns = portfolio_optimization.get_covariance_returns(returns)
+    covariance_returns = pd.DataFrame(covariance_returns, returns.columns, returns.columns)
+
+    covariance_returns_correlation = np.linalg.inv(np.diag(np.sqrt(np.diag(covariance_returns))))
+    covariance_returns_correlation = pd.DataFrame(
+        covariance_returns_correlation.dot(covariance_returns).dot(covariance_returns_correlation),
+        covariance_returns.index,
+        covariance_returns.columns)
+
+    project_helper.plot_covariance_returns_correlation(
+        covariance_returns_correlation,
+        'Covariance Returns Correlation Matrix')
