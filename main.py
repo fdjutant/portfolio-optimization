@@ -54,3 +54,10 @@ if __name__ == "__main__":
     project_helper.plot_covariance_returns_correlation(
         covariance_returns_correlation,
         'Covariance Returns Correlation Matrix')
+    
+    # optimize the portfolio weights by using the covariance information
+    raw_optimal_single_rebalance_etf_weights = portfolio_optimization.get_optimal_weights(covariance_returns.values, index_weights.iloc[-1])
+    optimal_single_rebalance_etf_weights = pd.DataFrame(
+        np.tile(raw_optimal_single_rebalance_etf_weights, (len(returns.index), 1)),
+        returns.index,
+        returns.columns)

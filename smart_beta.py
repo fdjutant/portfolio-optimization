@@ -40,11 +40,8 @@ def calculate_dividend_weights(dividends):
         Weights for each stock and date
     """
     #TODO: Implement function
-    # print(dividends)
     dividend_cumulative = dividends.cumsum(axis=0)
-    # print(dividend_cumulative)
     dividend_weights = dividend_cumulative.div(dividend_cumulative.sum(axis=1), axis=0)
-    # print(dividend_weights)
     
     return dividend_weights
 
@@ -63,8 +60,6 @@ def generate_returns(prices):
         The returns for each ticker and date
     """
     #TODO: Implement function
-    # print(prices)
-    # print(prices.shift(1))
     returns = (prices - prices.shift(1)) / prices.shift(1)
     
     return returns
@@ -108,10 +103,7 @@ def calculate_cumulative_returns(returns):
         Cumulative returns for each date
     """
     #TODO: Implement function
-    # print(returns)
-    # print(returns.sum(axis=1,skipna=False))
     cumulative_returns = (returns.sum(axis=1,skipna=False) + 1).cumprod(axis=0)
-    # print(cumulative_returns)
     
     return cumulative_returns
 
