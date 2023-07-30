@@ -19,7 +19,6 @@ def generate_dollar_volume_weights(close, volume):
     assert close.index.equals(volume.index)
     assert close.columns.equals(volume.columns)
     
-    #TODO: Implement function
     dollar_volume = close * volume
     dollar_volume_weights = dollar_volume.div(dollar_volume.sum(axis=1), axis=0)
 
@@ -39,7 +38,6 @@ def calculate_dividend_weights(dividends):
     dividend_weights : DataFrame
         Weights for each stock and date
     """
-    #TODO: Implement function
     dividend_cumulative = dividends.cumsum(axis=0)
     dividend_weights = dividend_cumulative.div(dividend_cumulative.sum(axis=1), axis=0)
     
@@ -59,7 +57,6 @@ def generate_returns(prices):
     returns : Dataframe
         The returns for each ticker and date
     """
-    #TODO: Implement function
     returns = (prices - prices.shift(1)) / prices.shift(1)
     
     return returns
@@ -83,7 +80,6 @@ def generate_weighted_returns(returns, weights):
     assert returns.index.equals(weights.index)
     assert returns.columns.equals(weights.columns)
     
-    #TODO: Implement function
     weighted_returns = returns * weights
     
     return weighted_returns
@@ -102,7 +98,6 @@ def calculate_cumulative_returns(returns):
     cumulative_returns : Pandas Series
         Cumulative returns for each date
     """
-    #TODO: Implement function
     cumulative_returns = (returns.sum(axis=1,skipna=False) + 1).cumprod(axis=0)
     
     return cumulative_returns
@@ -125,7 +120,6 @@ def tracking_error(benchmark_returns_by_date, etf_returns_by_date):
     """
     assert benchmark_returns_by_date.index.equals(etf_returns_by_date.index)
     
-    #TODO: Implement function
     tracking_error = (etf_returns_by_date - benchmark_returns_by_date).std() * np.sqrt(252)
     
     return tracking_error
