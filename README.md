@@ -16,7 +16,7 @@ To evaluate the performace of the smart beta portfolio tracking the ETF returns,
 ## Portfolio optimization
 Here, a simple portfolio optimization was performed by minimizing the quantity of the portfolio variance and the discrepancy between the portfolio weights and a market cap weighted index.
 
-The portfolio variance was quantified by computing its covariance matrix. On the other hand, how closely the smart beta portfolio weights following the benchmark index was simply calculated by taking an L2 norm. The objective function constructed from these two factors, and they are scaled by &#03BB;. To ensure that the index weight optimization is applicable for a smart beta portfolio, that is long only, the following constraints are added: the weights must be positive and its sum is equal to one.
+The portfolio variance was quantified by computing its covariance matrix. On the other hand, how closely the smart beta portfolio weights following the benchmark index was simply calculated by taking an L2 norm. The objective function constructed from these two factors, and they are scaled by &#955;. To ensure that the index weight optimization is applicable for a smart beta portfolio, that is long only, the following constraints are added: the weights must be positive and its sum is equal to one.
 
 Finally, the portfolio turnover was also computed to estimate the cost of rebalancing the portfolio. This was simply computed by multiplying the ratio of number of rebalance annually to number of rebalance events with the sum of total turnover. The sum of total turnover is simply estimated by summing the absolute difference of portolio weights across time and indices.
 
