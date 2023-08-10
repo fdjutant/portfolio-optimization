@@ -12,7 +12,7 @@ The following steps were taken to generate portfolio weights that outperform the
 
 To evaluate the performance of the smart beta portfolio tracking the ETF returns, an annualized tracking error can be computed by taking the standard deviation of the difference between the portfolio returns and the benchmark returns.
 
-![Alt text](./graphs/smart-beta-vs-ETF?raw=true "Cumulative returns of smart beta vs ETF")
+![Alt text](./graphs/smart-beta-vs-ETF.png?raw=true "Cumulative returns of smart beta vs ETF")
 
 
 ## Portfolio optimization
@@ -20,7 +20,7 @@ In this project, a simple portfolio optimization was performed by minimizing the
 
 The portfolio variance was quantified by computing its covariance matrix, which measures the degree of correlation among the returns of different assets in the portfolio. On the other hand, the deviation between the smart beta portfolio weights and the benchmark index weights was calculated by taking an L2 norm, which is the square root of the sum of squared differences. The objective function was constructed from these two factors, and they were scaled by a parameter &#955; that represents the trade-off between minimizing variance and tracking the index. To ensure that the index weight optimization is applicable for a smart beta portfolio, which is long only, the following constraints were added: the weights must be positive and their sum must be equal to one.
 
-![Alt text](./graphs/optimized-smart-beta-vs-ETF?raw=true "Cumulative returns of optimized smart beta vs ETF")
+![Alt text](./graphs/optimized-smart-beta-vs-ETF.png?raw=true "Cumulative returns of optimized smart beta vs ETF")
 
 Finally, the portfolio turnover was also computed to estimate the cost of rebalancing the portfolio. This was simply computed by multiplying the ratio of the number of rebalances annually to the number of rebalance events with the sum of total turnover. The sum of total turnover was estimated by summing the absolute difference of portfolio weights across time and indices.
 
