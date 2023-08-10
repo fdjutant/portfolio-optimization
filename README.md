@@ -1,4 +1,4 @@
-[![Github commit](https://img.shields.io/github/last-commit/QI2lab/mcSIM)](https://github.com/fdjutant/portfolio-optimization)
+[![Github commit](https://img.shields.io/github/last-commit/fdjutant/portfolio-optimization)](https://github.com/fdjutant/portfolio-optimization)
 
 # Building and optimizing smart beta portfolio
 ## Project overview
